@@ -1,0 +1,14 @@
+
+* {
+bg: #1D1F21;
+bgAlt: #1D1F21;
+fg: white;
+button: #252931;
+background-color: @bg;
+text-color: @fg;
+}
+
+configuration {
+  font: "Misc Tamsyn 13";
+}
+
