@@ -20,7 +20,9 @@ gaps inner 10
 gaps outer 10
 
 # Window titles removed
-new_window 1pixel
+default_border pixel 1
+default_floating_border pixel 1
+for_window [class="^.*"] border pixel 1
 
 # Setting keyboard config
 exec_always --no-startup-id setxkbmap -layout us,it -option -option grp:win_space_toggle
@@ -55,6 +57,9 @@ exec_always --no-startup-id blueman-applet
 
 # Polybar
 exec_always --no-startup-id /home/frama/.config/polybar/launch.sh
+
+# Gnome keyrig
+exec_always --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -138,10 +143,10 @@ bindsym $mod+a focus parent
 set $ws1 "1 "
 set $ws2 "2 "
 set $ws3 "3 ﬏"
-set $ws4 "4"
+set $ws4 "4 "
 set $ws5 "5 ﭮ"
 set $ws6 "6 "
-set $ws7 "7"
+set $ws7 "7 "
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
@@ -175,7 +180,7 @@ for_window [class="Code"] move to workspace $ws3
 for_window [class="discord"] move to workspace $ws5
 for_window [class="Spotify"] move to workspace $ws6
 for_window [class="jetbrains-idea"] move to workspace $ws3
-for_window [class="obsidian"] move to workspace $ws3
+for_window [class="obsidian"] move to workspace $ws4
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -211,7 +216,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # xrandr rofi menu
-bindsym XF86Display exec xrandrmenu
+# bindsym XF86Display exec xrandrmenu
+
+# arandr launch
+bindsym XF86Display exec arandr
 
 # brightness controll
 bindsym XF86MonBrightnessDown exec xbacklight -10
