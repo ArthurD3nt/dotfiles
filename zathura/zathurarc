@@ -1,0 +1,21 @@
+# Unbinding stuff
+unmap j
+unmap k
+unmap <S-j>
+unmap <S-k>
+
+# Automatic clipboard fill
+set selection-clipboard clipboard
+
+# Enables tabbed mode
+tabbed -c zathura -e
+
+# Kebindings
+map j navigate next
+map k navigate previous
+map J scroll down
+map K scroll up
+map <C-=> zoom in
+map <C-+> zoom in
+map <C--> zoom out
+
